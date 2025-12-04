@@ -6,7 +6,7 @@
     --bg-light-dark: #1c1c1c;
     --text-primary: #e0e0e0;
     --text-secondary: #aaaaaa;
-    --accent-color: #039b8e; /* Cor primária do Bootstrap */
+    --accent-color: #561C24; /* Cor primária do Bootstrap */
 }
 
 html {
@@ -24,11 +24,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-#cores{
-    background-color: #7e400e;
-    border-color: #ffffff;
-}
-/* --- Seções Alternadas --- */
+#cores {
+    background-color: var(--accent-color);
+    color: black; /* Cor de texto escura para contraste no botão claro */
+    border-color: var(--accent-color);
+}/* --- Seções Alternadas --- */
 .section-darker {
     background-color: var(--bg-light-dark);
 }
@@ -69,7 +69,7 @@ section {
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--accent-color);
-    box-shadow: 0 0 20px rgb(25, 123, 102);
+    box-shadow: 0 0 20px #682121;
 }
 
 /* --- Efeito Máquina de Escrever (Typewriter) --- */
@@ -89,7 +89,7 @@ section {
 .project-card {
     background: rgba(40, 40, 40, 0.5);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 221, 11, 0.1);
+    border: 1px solid rgba(221, 0, 0, 0.1);
     border-radius: 15px;
     padding: 2rem;
     height: 100%; /* Garante que os cards tenham a mesma altura */
@@ -159,12 +159,11 @@ footer {
     transform: translateY(0);
 }
 /*ALTERAÇÕWS*/
-.btn.btn-outline-primary.rounded-pill.px-4{
-    background-color: #7e310e;
-    color: #fff;
-    border-color:#7e400e;
-}
-.hero-section.d-flex.align-items-center.justify-content-center.text-center {
+.btn.btn-outline-primary.rounded-pill.px-4 {
+    background-color: var(--accent-color);
+    color: black; /* Cor de texto escura para contraste no botão claro */
+    border-color: var(--accent-color);
+}.hero-section.d-flex.align-items-center.justify-content-center.text-center {
     position: relative;
     z-index: 1;
     min-height: 100vh;
@@ -182,9 +181,81 @@ footer {
             rgba(0, 0, 0, 0.3) 100%,    /* vai ficando mais leve */
             rgba(0, 0, 0, 0) 100%      /* some totalmente no final */
         ),
-        url("hjj.gif") center/cover no-repeat;
+        url("gif.gif") center/cover no-repeat;
     z-index: -1;
 }
 #projetos{
-    background-color: #021414;
+    background-color: #290b10; /* Borgonha Médio */
+}
+/* --- Novo Carrossel de Projetos --- */
+
+.carousel-container {
+    position: relative;
+}
+
+.projects-wrapper {
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    scroll-behavior: smooth; /* Permite o scroll suave via JS */
+    padding: 10px 0; /* Espaçamento interno */
+    margin-left: 0; /* Ajuste para centralização */
+    margin-right: 0; /* Ajuste para centralização */
+}
+
+/* Garante que cada item de projeto use o espaço correto e não quebre */
+.col-project-item {
+    flex: 0 0 auto; /* Não cresce, não encolhe, base 'auto' */
+    width: 33.333%; /* 3 cards por linha (100% / 3) em telas grandes (lg) */
+}
+
+@media (max-width: 992px) { /* Medium devices (md) */
+    .col-project-item {
+        width: 50%; /* 2 cards por linha (100% / 2) */
+    }
+}
+
+@media (max-width: 768px) { /* Small devices (sm) */
+    .col-project-item {
+        width: 100%; /* 1 card por linha */
+    }
+}
+
+
+/* Estilização dos Botões de Navegação */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 30, 30, 0.8);
+    border: none;
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1; /* Alinhamento do ícone */
+}
+
+.carousel-nav:hover {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
+
+/* Esconder as setas no modo mobile para priorizar o scroll natural */
+@media (max-width: 768px) {
+    .carousel-nav {
+        display: none;
+    }
+    .projects-wrapper {
+        overflow-x: auto; /* Permite o scroll horizontal "touch" no mobile */
+    }
 }

@@ -70,3 +70,44 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+// --- Funcionalidade de Carrossel de Projetos ---
+const projectsWrapper = document.querySelector('.projects-wrapper');
+const prevButton = document.querySelector('.carousel-nav.prev');
+const nextButton = document.querySelector('.carousel-nav.next');
+
+if (projectsWrapper && prevButton && nextButton) {
+    nextButton.addEventListener('click', () => {
+        // Pega o tamanho de um item (col-lg-4 ou col-md-6) + o espaçamento (gap)
+        const itemWidth = projectsWrapper.querySelector('.col-project-item').offsetWidth + 16; // 16px é o 'g-4' do Bootstrap (gap)
+
+        // Rola o wrapper o tamanho de um item para a direita
+        projectsWrapper.scrollBy({
+            left: itemWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    prevButton.addEventListener('click', () => {
+        // Pega o tamanho de um item (col-lg-4 ou col-md-6) + o espaçamento (gap)
+        const itemWidth = projectsWrapper.querySelector('.col-project-item').offsetWidth + 16; // 16px é o 'g-4' do Bootstrap (gap)
+
+        // Rola o wrapper o tamanho de um item para a esquerda
+        projectsWrapper.scrollBy({
+            left: -itemWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    // Opcional: Adicionar lógica para desabilitar as setas no início/fim
+    projectsWrapper.addEventListener('scroll', () => {
+        // Verifica se está no início
+        prevButton.disabled = projectsWrapper.scrollLeft === 0;
+
+        // Verifica se está no fim (com uma pequena margem de erro)
+        const maxScroll = projectsWrapper.scrollWidth - projectsWrapper.clientWidth;
+        nextButton.disabled = projectsWrapper.scrollLeft >= maxScroll - 5;
+    });
+
+    // Inicia a seta "anterior" como desabilitada, pois começa no início
+    prevButton.disabled = true;
+}

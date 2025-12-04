@@ -68,9 +68,12 @@ Atualmente, estou aprimorando minhas habilidades em programação, aprendendo no
         <section id="projetos" class="py-5 section-darker fade-in-section">
             <div class="container">
                 <h2 class="text-center display-5 mb-5">Projetos Recentes</h2>
-                <div class="row g-4">
+
+            <div class="carousel-container">
+                <button class="carousel-nav prev"><i class="bi bi-chevron-left"></i></button>
+                <div class="projects-wrapper row flex-nowrap g-4">
                     
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-project-item">
                         <div class="project-card">
                             <h3 class="card-title">AppLogin com Firebase</h3>
                             <p class="card-text">Um app de login e cadastro com visual moderno (glassmorphism), Bootstrap 5 e autenticação real usando Firebase.</p>
@@ -86,7 +89,7 @@ Atualmente, estou aprimorando minhas habilidades em programação, aprendendo no
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-project-item">
                         <div class="project-card">
                             <h3 class="card-title">Meu Portfólio Web</h3>
                             <p class="card-text">Meu currículo digital e portfólio de projetos, construído com HTML, CSS moderno (Dark Mode, Flexbox) e JavaScript.</p>
@@ -101,7 +104,7 @@ Atualmente, estou aprimorando minhas habilidades em programação, aprendendo no
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-project-item">
                         <div class="project-card">
                             <h3 class="card-title">Meu 'Snake Game'</h3>
                             <p class="card-text">Meu jogo da cobrinha personalizado, desenvolvido com HTML, CSS e JavaScript, incluindo movimentação com setas e WASD, e elementos visuais customizados.</p>
@@ -115,8 +118,38 @@ Atualmente, estou aprimorando minhas habilidades em programação, aprendendo no
                             </a>
                         </div>
                     </div>
+
+                    <div class="col-lg-4 col-md-6 col-project-item">
+                        <div class="project-card">
+                            <h3 class="card-title">Site IAGORA News</h3>
+                            <p class="card-text">Um portal de notícias focado em Inteligência Artificial com análises aprofundadas, cobertura diária das últimas inovações e artigos categorizados em diferentes seções (Artigos, Entrevistas e Tutoriais).</p>
+                            <div class="card-tags">
+                                <span class="badge bg-primary">HTML</span>
+                                <span class="badge bg-info text-dark">CSS</span>
+                                <span class="badge bg-warning text-dark">JavaScript</span>
+                            </div>
+                            <a href="https://ammts09.github.io/iagora/" target="_blank" class="btn btn-outline-light mt-4">
+                                <i class="bi bi-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-project-item">
+                        <div class="project-card">
+                            <h3 class="card-title">Gerador de citações</h3>
+                            <p class="card-text">Um gerador de citações com um vasto acervo de frases famosas e inspiradoras e fácil compartilhamento para motivar o dia a dia.</p>
+                            <div class="card-tags">
+                                <span class="badge bg-primary">HTML</span>
+                                <span class="badge bg-info text-dark">CSS</span>
+                                <span class="badge bg-warning text-dark">JavaScript</span>
+                            </div>
+                            <a href="https://ammts09.github.io/cita/" target="_blank" class="btn btn-outline-light mt-4">
+                                <i class="bi bi-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
                     
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-project-item">
                         <div class="project-card">
                             <h3 class="card-title">Próximo Projeto</h3>
                             <p class="card-text">Em breve, um novo projeto explorando [Tecnologia, ex: React ou Python] estará disponível aqui.</p>
@@ -128,8 +161,10 @@ Atualmente, estou aprimorando minhas habilidades em programação, aprendendo no
                             </a>
                         </div>
                     </div>
-
+                    
                 </div>
+                <button class="carousel-nav next"><i class="bi bi-chevron-right"></i></button>
+            </div>
             </div>
         </section>
 
